@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:pelis_app/screens/screen_Barrel.dart';
+import 'package:pelis_app/widgets/widgets_Barrel.dart';
 
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({Key? key}) : super(key: key);
@@ -13,7 +14,13 @@ class DetailsScreen extends StatelessWidget {
         slivers: [
           _CustomAppBar(),
           SliverList(
-            delegate: SliverChildListDelegate([_PosterTitle()]),
+            delegate: SliverChildListDelegate([
+              _PosterTitle(),
+              _Overview(),
+              _Overview(),
+              _Overview(),
+              CastingCards()
+            ]),
           )
         ],
       ),
@@ -95,6 +102,20 @@ class _PosterTitle extends StatelessWidget {
             ],
           )
         ],
+      ),
+    );
+  }
+}
+
+class _Overview extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(10),
+      child: Text(
+        'Sit quis tempor adipisicing quis. Id eu commodo enim ut id aliqua non fugiat quis consectetur do. Minim in deserunt sunt nostrud ut. Adipisicing aliquip tempor amet officia. Proident laborum irure et dolore et officia pariatur qui. Do nisi consectetur eiusmod elit aliqua nisi quis esse dolor culpa esse ullamco cillum minim. Nisi adipisicing anim eu dolor qui velit nostrud laboris est nulla laboris ipsum ullamco.',
+        textAlign: TextAlign.justify,
+        style: Theme.of(context).textTheme.subtitle1,
       ),
     );
   }
