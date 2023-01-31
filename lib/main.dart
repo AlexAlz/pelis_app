@@ -1,6 +1,19 @@
+import 'package:pelis_app/providers/movies_provider.dart';
 import 'package:pelis_app/screens/screen_Barrel.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(AppState());
+
+class AppState extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(providers: [
+      ChangeNotifierProvider(
+        create: (_) => MoviesProvider(),
+        lazy: false,
+      ),
+    ], child: MyApp());
+  }
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,11 +25,11 @@ class MyApp extends StatelessWidget {
       title: 'Peliculas',
       initialRoute: 'home',
       routes: {
-        'home': (_) => HomeScreen(),
-        'details': (_) => DetailsScreen(),
+        'home': (_) => const HomeScreen(),
+        'details': (_) => const DetailsScreen(),
       },
       theme: ThemeData.light()
-          .copyWith(appBarTheme: AppBarTheme(color: Colors.indigo)),
+          .copyWith(appBarTheme: const AppBarTheme(color: Colors.indigo)),
     );
   }
 }

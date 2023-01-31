@@ -1,5 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-import 'package:pelis_app/screens/screen_Barrel.dart';
+
 import 'package:pelis_app/widgets/widgets_Barrel.dart';
 
 class DetailsScreen extends StatelessWidget {
