@@ -1,9 +1,11 @@
 import 'package:pelis_app/providers/movies_provider.dart';
 import 'package:pelis_app/screens/screen_Barrel.dart';
 
-void main() => runApp(AppState());
+void main() => runApp(const AppState());
 
 class AppState extends StatelessWidget {
+  const AppState({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(providers: [
@@ -11,7 +13,7 @@ class AppState extends StatelessWidget {
         create: (_) => MoviesProvider(),
         lazy: false,
       ),
-    ], child: MyApp());
+    ], child: const MyApp());
   }
 }
 
